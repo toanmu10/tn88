@@ -72,6 +72,7 @@ class Helper
         return $html;
     }
 
+
     public static function isChild($categories, $id) : bool
     {
         foreach ($categories as $category) {

@@ -29,45 +29,57 @@ Route::resource('admin/users/login/store', LoginController::class)->only('store'
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::prefix('admin')->group(function () {
+    Route::middleware(['isAdmin'])->group(function () {
+        Route::prefix('admin')->group(function () {
 
-        Route::get('/', [MainController::class, 'index'])->name('admin');
-        Route::get('main', [MainController::class, 'index']);
-
-        Route::prefix('categories')->group(function () {
-            Route::get('add', [CategoryController::class, 'create']);
-            Route::post('add', [CategoryController::class, 'store']);
-            Route::get('list', [CategoryController::class, 'index']);
-            Route::get('edit/{category}', [CategoryController::class, 'show']);
-            Route::post('edit/{category}', [CategoryController::class, 'update']);
-            Route::DELETE('destroy', [CategoryController::class, 'destroy']);
+            Route::get('/', [MainController::class, 'index'])->name('admin');
+            Route::get('main', [MainController::class, 'index']);
+    
+            Route::prefix('categories')->group(function () {
+                Route::get('add', [CategoryController::class, 'create']);
+                Route::post('add', [CategoryController::class, 'store']);
+                Route::get('list', [CategoryController::class, 'index']);
+                Route::get('edit/{category}', [CategoryController::class, 'show']);
+                Route::post('edit/{category}', [CategoryController::class, 'update']);
+                Route::DELETE('destroy', [CategoryController::class, 'destroy']);
+            });
+    
+            Route::prefix('products')->group(function () {
+                Route::get('add', [ProductController::class, 'create']);
+                Route::post('add', [ProductController::class, 'store']);
+                Route::get('list', [ProductController::class, 'index']);
+                Route::get('edit/{product}', [ProductController::class, 'show']);
+                Route::post('edit/{product}', [ProductController::class, 'update']);
+                Route::DELETE('destroy', [ProductController::class, 'destroy']);
+            });
+    
+            Route::prefix('banners')->group(function () {
+                Route::get('add', [BannerController::class, 'create']);
+                Route::post('add', [BannerController::class, 'store']);
+                Route::get('list', [BannerController::class, 'index']);
+                Route::get('edit/{banner}', [BannerController::class, 'show']);
+                Route::post('edit/{banner}', [BannerController::class, 'update']);
+                Route::DELETE('destroy', [BannerController::class, 'destroy']);
+            });
+    
+            Route::post('upload/services', [UploadController::class, 'store']);
         });
-
-        Route::prefix('products')->group(function () {
-            Route::get('add', [ProductController::class, 'create']);
-            Route::post('add', [ProductController::class, 'store']);
-            Route::get('list', [ProductController::class, 'index']);
-            Route::get('edit/{product}', [ProductController::class, 'show']);
-            Route::post('edit/{product}', [ProductController::class, 'update']);
-            Route::DELETE('destroy', [ProductController::class, 'destroy']);
-        });
-
-        Route::prefix('banners')->group(function () {
-            Route::get('add', [BannerController::class, 'create']);
-            Route::post('add', [BannerController::class, 'store']);
-            Route::get('list', [BannerController::class, 'index']);
-            Route::get('edit/{banner}', [BannerController::class, 'show']);
-            Route::post('edit/{banner}', [BannerController::class, 'update']);
-            Route::DELETE('destroy', [BannerController::class, 'destroy']);
-        });
-
-        Route::post('upload/services', [UploadController::class, 'store']);
     });
+
+
 });
 
-Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
-Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
+    Auth::routes();
 
-// Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index']);
-// Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
+    Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
+    
+    Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index']);
+    Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
+    
+
+
+
+
 

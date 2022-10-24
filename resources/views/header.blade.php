@@ -18,9 +18,22 @@
 
                         {!! $categoriesHtml !!}
 
-                        <li>
-                            <a href="contact.html">Liên Hệ</a>
+                        @if (Auth::user())
+                        <li class="nav-item active">
+                            <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                                <button type="submit" class="nav-link btn-logout" >Logout</button>
+                            </form>
                         </li>
+                        @endif
+                        @if (!Auth::user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
 
