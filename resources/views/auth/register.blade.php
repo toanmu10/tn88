@@ -5,7 +5,7 @@
     <div class="row justify-content-center register-location">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header register-title">{{ __('attribute.sign_up_to_hapolearn') }}</div>
+                <div class="card-header register-title">Sign Up</div>
                 @if (session('error'))
                 <div class="alert alert-danger text-center">
                     {{ session('error') }}
@@ -17,7 +17,7 @@
                         <div class="form-group row">
                             <div class="col-md-12 d-flex">
                                 <label for="username"
-                                        class="col-md-4 col-form-label text-md-left p-0 register-label">{{ __('attribute.username') }}</label>
+                                        class="col-md-4 col-form-label text-md-left p-0 register-label">Username</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="username" type="text"
@@ -35,7 +35,7 @@
                         <div class="form-group row">
                             <div class="col-md-12 d-flex">
                                 <label for="email"
-                                        class="col-md-4 col-form-label text-md-left p-0 register-label">{{ __('Email') }}</label>
+                                        class="col-md-4 col-form-label text-md-left p-0 register-label">Email</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="email" type="text"
@@ -53,7 +53,7 @@
                         <div class="form-group row">
                             <div class="col-md-12 d-flex">
                                 <label for="password"
-                                        class="col-md-4 col-form-label text-md-left p-0 register-label">{{ __('attribute.password') }}</label>
+                                        class="col-md-4 col-form-label text-md-left p-0 register-label">Password</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="password" type="password"
@@ -70,7 +70,7 @@
                         <div class="form-group row">
                             <div class="col-md-12 d-flex">
                                 <label for="password-confirm"
-                                        class="col-md-4 col-form-label text-md-left p-0 register-label">{{ __('attribute.confirm_password') }}</label>
+                                        class="col-md-4 col-form-label text-md-left p-0 register-label">Confirm password</label>
                             </div>
                             <div class="col-md-12">
                                 <input id="password-confirm" type="password"
@@ -86,7 +86,7 @@
                         </div>
                         <div class="from-group row mt-5 justify-content-center">
                             <button type="submit" class="btn btn-register">
-                                {{ __('attribute.sign_up') }}
+                                Sign Up
                             </button>
                         </div>
                     </form>

@@ -22,4 +22,11 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $data['keyword'] . '%')->orWhere('description', 'LIKE', '%' . $data['keyword'] . '%');
+        }
+    }
 }

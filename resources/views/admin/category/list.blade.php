@@ -4,7 +4,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th style="width: 50px">ID</th>
                 <th>Name</th>
                 <th>Active</th>
                 <th>Update</th>
@@ -15,6 +14,9 @@
             {!! \App\Helpers\Helper::category($categories) !!}
         </tbody>
     </table>
+    <div>
+    {!! $categories->links() !!}
+    </div>
 @endsection
 
 

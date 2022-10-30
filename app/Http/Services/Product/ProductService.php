@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class ProductService
 {
-    const LIMIT = 16;
+    const LIMIT = 8;
 
     public function get($page = null)
     {
@@ -35,7 +35,12 @@ class ProductService
             ->where('active', 1)
             ->where('id', '!=', $id)
             ->orderByDesc('id')
-            ->limit(8)
+            ->limit(4)
             ->get();
     }
+
+    // public function search($id)
+    // {
+    //     return Product::where
+    // }
 }

@@ -15,7 +15,6 @@ class Helper
             if ($category->parent_id == $parent_id) {
                 $html .= '
                     <tr>
-                        <td>' . $key . '</td>
                         <td>' . $char . $category->name . '</td>
                         <td>' . self::active($category->active) . '</td>
                         <td>' . $category->updated_at . '</td>
