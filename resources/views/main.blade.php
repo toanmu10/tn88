@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     @include('head')
+    
 </head>
 
 <body>
@@ -12,6 +13,8 @@
 
 
 @yield('content')
+
+@yield('scripts')
 
 @include('footer')
 
