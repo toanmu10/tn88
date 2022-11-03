@@ -29,7 +29,7 @@ class BannerService
 
     public function get()
     {
-        return Banner::orderByDesc('id')->paginate(15);
+        return Banner::orderByDesc('id')->paginate(4);
     }
 
     public function update($request, $banner)

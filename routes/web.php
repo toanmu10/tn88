@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\UserController;
+
 
 
 /*
@@ -34,6 +36,16 @@ Route::middleware(['auth'])->group(function () {
 
             Route::get('/', [MainController::class, 'index'])->name('admin');
             Route::get('main', [MainController::class, 'index']);
+
+            Route::prefix('users')->group(function () {
+                Route::get('add', [UserController::class, 'create']);
+                Route::post('add', [UserController::class, 'store']);
+                Route::get('list', [UserController::class, 'index']);
+                Route::get('edit/{category}', [UserController::class, 'show']);
+                Route::post('edit/{category}', [UserController::class, 'update']);
+                Route::DELETE('destroy', [UserController::class, 'destroy']);
+            });
+    
     
             Route::prefix('categories')->group(function () {
                 Route::get('add', [CategoryController::class, 'create']);
@@ -43,6 +55,9 @@ Route::middleware(['auth'])->group(function () {
                 Route::post('edit/{category}', [CategoryController::class, 'update']);
                 Route::DELETE('destroy', [CategoryController::class, 'destroy']);
             });
+
+            
+
     
             Route::prefix('products')->group(function () {
                 Route::get('add', [ProductController::class, 'create']);
@@ -77,7 +92,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     
     Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index']);
     Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
-    
+
+    Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
+    Route::get('add-to-cart/{id}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('add.to.cart');
+    Route::patch('update-cart', [App\Http\Controllers\ProductController::class, 'update'])->name('update.cart');
+    Route::delete('remove-from-cart', [App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');
 
 
 
