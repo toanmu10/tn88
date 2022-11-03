@@ -1,7 +1,7 @@
 @extends('main')
   
 @section('content')
-<table id="cart" class="table table-hover table-condensed" style="margin-top:100px; margin-left: 50px">
+<table id="cart" class="table table-hover table-condensed" style="margin-top:150px; width: 70%; margin-left: 12%; margin-right: 15%">
     <thead>
         <tr">
             <th style="width:50%">Product</th>
@@ -74,8 +74,6 @@
     });
   
     $(".remove-from-cart").click(function (e) {
-        console.log('1233');
-
         e.preventDefault();
   
         var ele = $(this);
