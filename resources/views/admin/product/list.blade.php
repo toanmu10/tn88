@@ -8,6 +8,7 @@
             <th>Tên Sản Phẩm</th>
             <th>Danh Mục</th>
             <th>Giá Gốc</th>
+            <th>Số lượng</th>
             <th>Ảnh</th>
             <th>Active</th>
             <th>Update</th>
@@ -21,6 +22,7 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->category->name }}</td>
                 <td>{{ $product->price }}</td>
+                <td>{{ $product->qty }}</td>
                 <td><img src="{{ $product->thumb }}" style="width:50px; height:50px"/></td>
                 <td>{!! \App\Helpers\Helper::active($product->active) !!}</td>
                 <td>{{ $product->updated_at }}</td>

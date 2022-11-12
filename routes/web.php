@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\OrderController;
 
 
 
@@ -76,7 +77,12 @@ Route::middleware(['auth'])->group(function () {
                 Route::post('edit/{banner}', [BannerController::class, 'update']);
                 Route::DELETE('destroy', [BannerController::class, 'destroy']);
             });
-    
+
+            Route::get('orders', [OrderController::class, 'index']);
+            Route::get('view-order/{id}', [OrderController::class, 'view']);
+            Route::put('update-order/{id}', [OrderController::class, 'updateOrder']);
+
+
             Route::post('upload/services', [UploadController::class, 'store']);
         });
     });
@@ -97,6 +103,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('add-to-cart/{id}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('add.to.cart');
     Route::patch('update-cart', [App\Http\Controllers\ProductController::class, 'update'])->name('update.cart');
     Route::delete('remove-from-cart', [App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');
+
+    Route::get('checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
+    Route::post('place-order', [App\Http\Controllers\CheckoutController::class, 'placeOrder']);
+
+    Route::get('my-order', [App\Http\Controllers\OrderController::class, 'index']);
+    Route::get('view-order/{id}', [App\Http\Controllers\OrderController::class, 'a']);
+
+
 
 
 

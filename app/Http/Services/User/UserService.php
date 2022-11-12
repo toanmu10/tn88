@@ -11,11 +11,18 @@ use Illuminate\Support\Facades\Storage;
 
 class UserService
 {
-    public function insert($request)
+    public function create($request)
     {
         try {
             #$request->except('_token');
-            User::create($request->input());
+            User::create([
+                'username' => (string)$request->input('username'),
+                'password' => (int)$request->input('password'),
+                'email' => (string)$request->input('email'),
+                'active' => (string)$request->input('active')
+            ]
+                
+            );
             Session::flash('success', 'Thêm User mới thành công');
         } catch (\Exception $err) {
             Session::flash('error', 'Thêm User LỖI');
@@ -29,7 +36,7 @@ class UserService
 
     public function getUser()
     {
-        return User::where('role_id', 1)->get();
+        return User::whereNot('role_id', 0)->get();
     }
 
     public function update($request, $User)

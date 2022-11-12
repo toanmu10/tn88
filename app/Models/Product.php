@@ -13,6 +13,7 @@ class Product extends Model
         'name',
         'thumb',
         'price',
+        'qty',
         'category_id',
         'description',
         'active',
@@ -21,6 +22,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function orders() {
+        return $this->belongsToMany(Order::class, 'order_details', 'product_id');
     }
 
     public function scopeSearch($query, $data)

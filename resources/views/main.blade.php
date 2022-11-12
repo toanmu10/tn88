@@ -10,8 +10,6 @@
 <!-- Header -->
 @include('header')
 
-
-
 @yield('content')
 
 @yield('scripts')

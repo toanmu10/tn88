@@ -5,7 +5,7 @@
     <div class="row justify-content-center register-location">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header register-title">Sign Up</div>
+                <div class="card-header register-title">Đăng ký</div>
                 @if (session('error'))
                 <div class="alert alert-danger text-center">
                     {{ session('error') }}
@@ -85,8 +85,8 @@
                             </div>
                         </div>
                         <div class="from-group row mt-5 justify-content-center">
-                            <button type="submit" class="btn btn-register">
-                                Sign Up
+                            <button type="submit" class="btn btn-register btn-success">
+                                Tạo
                             </button>
                         </div>
                     </form>

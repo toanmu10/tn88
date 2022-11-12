@@ -1,8 +1,8 @@
 @extends('main')
   
 @section('content')
-<form class="bg0 p-t-130 p-b-85" method="post">
-<table id="cart" class="table table-hover table-condensed" style="margin-top:100px; width: 70%; margin-left: 12%; margin-right: 15%">
+
+<table id="cart" class="table table-hover table-condensed" style="margin-top:150px; width: 70%; margin-left: 12%; margin-right: 15%">
     <thead>
         <tr">
             <th style="width:50%">Product</th>
@@ -16,7 +16,6 @@
         @php $total = 0 @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
-
                 @php $total += $details['price'] * $details['quantity'] @endphp
                 <tr data-id="{{ $id }}">
                     <td data-th="Product">
@@ -32,7 +31,6 @@
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
                     </td>
                     <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
-                    
                     <td class="actions" data-th="">
                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -46,18 +44,29 @@
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
-                @if (Auth::user())
+                <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua</a>
                 <button class="btn btn-success text-white"><a href="{{ url('checkout') }}" style="color:white">Đặt hàng</a></button>
-                @else 
-                <button class="btn btn-success text-white"><a href="{{ url('login') }}" style="color:white">Đăng nhập để tiếp tục</a></button>
-                @endif
             </td>
         </tr>
     </tfoot>
 </table>
 
-</form>
+<div style="margin-top:150px; width: 70%; margin-left: 12%; margin-right: 15%">
+    <h4>Thông tin đặt hàng</h4>
+    <form method="POST" action="{{ url('place-order')}}">
+        {{ csrf_field() }}
+        <input type="text" class="form-control" name="name" placeholder="Name" value="" style="margin-top: 20px" />
+        <input type="text" class="form-control" name="email" placeholder="Email" style="margin-top: 20px" />
+        <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" style="margin-top: 20px" />
+        <input type="text" class="form-control" name="address" placeholder="Address" style="margin-top: 20px" />
+        <input type="text" class="form-control" name="message" placeholder="Message" style="margin-top: 20px" />
+        <input type="hidden" class="form-control" name="total" />
+        <button type="submit" style="margin-top: 20px" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+
+
 @endsection
   
 @section('scripts')
