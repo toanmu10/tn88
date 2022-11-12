@@ -33,16 +33,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="category">Giá Gốc</label>
+                        <label for="category">Giá</label>
                         <input type="number" name="price" value="{{ $product->price }}"  class="form-control" >
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="category">Giá Giảm</label>
-                        <input type="number" name="price_sale" value="{{ $product->price_sale }}"  class="form-control" >
-                    </div>
+                <div class="form-group">
+                    <label>Số lượng </label>
+                    <input type="number" name="qty" value="{{ old('qty') }}"  class="form-control" >
                 </div>
             </div>
 

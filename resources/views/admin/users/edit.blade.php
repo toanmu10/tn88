@@ -10,81 +10,51 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="category">Tên Sản Phẩm</label>
-                        <input type="text" name="name" value="{{ $product->name }}" class="form-control"
-                               placeholder="Nhập tên sản phẩm">
+                        <label for="user">Tên người dùng</label>
+                        <input type="text" name="username" value="{{ $user->username }}" class="form-control"
+                               placeholder="Nhập tên người dùng">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Danh Mục</label>
-                        <select class="form-control" name="category_id">
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
-                                    {{ $category->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="category">Giá Gốc</label>
-                        <input type="number" name="price" value="{{ $product->price }}"  class="form-control" >
+                        <label for="user">Mật khẩu Người dùng</label>
+                        <input type="text" name="password" value="{{ $user->password }}" class="form-control"  placeholder="Nhập password">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="category">Giá Giảm</label>
-                        <input type="number" name="price_sale" value="{{ $product->price_sale }}"  class="form-control" >
+                        <label for="email">Email</label>
+                        <input type="text" name="email" value="{{ $user->email }}" class="form-control"
+                               placeholder="Nhập email người dùng">
                     </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label>Mô Tả </label>
-                <textarea name="description" class="form-control">{{ $product->description }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Mô Tả Chi Tiết</label>
-                <textarea name="content" id="content" class="form-control">{{ $product->content }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="category">Ảnh Sản Phẩm</label>
-                <input type="file"  class="form-control" id="upload">
-                <div id="image_show">
-                    <a href="{{ $product->thumb }}" target="_blank">
-                        <img src="{{ $product->thumb }}" width="100px">
-                    </a>
-                </div>
-                <input type="hidden" name="thumb" value="{{ $product->thumb }}" id="thumb">
-            </div>
-
-            <div class="form-group">
-                <label>Kích Hoạt</label>
+                
+                <div class="form-group">
+                <label>Quyền</label>
                 <div class="custom-control custom-radio">
-                    <input class="custom-control-input" value="1" type="radio" id="active" name="active"
-                        {{ $product->active == 1 ? ' checked=""' : '' }}>
-                    <label for="active" class="custom-control-label">Có</label>
+                    <input class="custom-control-input" value="3" type="radio" id="active" name="active"
+                        {{ $user->role_id == 3 ? ' checked=""' : '' }}>
+                    <label for="active" class="custom-control-label">Khách hàng</label>
                 </div>
                 <div class="custom-control custom-radio">
                     <input class="custom-control-input" value="0" type="radio" id="no_active" name="active"
-                        {{ $product->active == 0 ? ' checked=""' : '' }}>
-                    <label for="no_active" class="custom-control-label">Không</label>
+                        {{ $user->role_id == 2 ? ' checked=""' : '' }}>
+                    <label for="no_active" class="custom-control-label">Nhân viên bán hàng</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="0" type="radio" id="no_active" name="active"
+                        {{ $user->role_id == 1 ? ' checked=""' : '' }}>
+                    <label for="no_active" class="custom-control-label">Nhân viên kho</label>
+                </div>
                 </div>
             </div>
 
         </div>
 
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Cập Nhật Sản Phẩm</button>
+            <button type="submit" class="btn btn-primary">Cập Nhật Người Dùng</button>
         </div>
         @csrf
     </form>

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center login-location">
         <div class="col-md-6">
             <div class="card">
@@ -51,20 +51,24 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12 d-flex justify-content-between">
-                                <button type="submit" class="btn btn-submit">
-                                    Sign In
+                                <button type="submit" class="btn btn-submit btn-success mt-2">
+                                    Đăng nhập
                                 </button>
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link forgot-password" href="{{ route('password.request') }}">
-                                        Forgot Password
+                                <button type="submit" class="btn btn-submit btn-secondary mt-2">
+                                    <a class="btn btn-link forgot-password text-white" href="{{ route('password.request') }}">
+                                        Quên mật khẩu
                                     </a>
+                                    </button>
                                 @endif
                             </div>
                         </div>
                         <div class="from-group row mt-5 justify-content-center">
+                        <button type="submit" class="btn btn-submit btn-success mt-2">
                             <a href="{{ route('register') }}" class="btn btn-register">
-                                Create New Account
+                                Tạo tài khoản mới
                             </a>
+                        </button>
                         </div>
                     </form>
                 </div>

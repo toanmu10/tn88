@@ -6,7 +6,6 @@
         <tr>
             <th>Tên Người dùng</th>
             <th>Email</th>
-            <th>Mật khẩu</th>
             <th>Quyền</th>
             <th style="width: 100px">&nbsp;</th>
         </tr>
@@ -14,14 +13,17 @@
         <tbody>
             @foreach($users as $key => $user)
             <tr>
-                <td>{{ $user->username }}</td>
+                <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->password }}</td>
                 <td>
-                    @if($user->role_id = 1)
+                    @if($user->role_id = 3)
                     Khách hàng
+                    @elseif($user->role_id = 2)
+                    Nhân viên bán hàng
+                    @elseif($user->role_id = 1)
+                    Nhân viên kho
                     @else
-                    Nhân viên
+                    Admin
                     @endif
                 </td>
                 <td>
