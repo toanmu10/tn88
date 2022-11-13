@@ -6,7 +6,7 @@
         <tr>
             <th style="width: 50px">ID</th>
             <th>Tiêu Đề</th>
-            <th>Link</th>
+            <th>Đường dẫn</th>
             <th>Ảnh</th>
             <th>Trang Thái</th>
             <th>Cập Nhật</th>

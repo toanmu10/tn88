@@ -43,11 +43,10 @@
                         </tbody>
                     </table>
                     <h4>
-                        Total : {{ $orders->total }}
+                        Tổng tiền : {{ $orders->total }}
                     </h4>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

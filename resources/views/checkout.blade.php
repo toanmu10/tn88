@@ -5,10 +5,10 @@
 <table id="cart" class="table table-hover table-condensed" style="margin-top:150px; width: 70%; margin-left: 12%; margin-right: 15%">
     <thead>
         <tr">
-            <th style="width:50%">Product</th>
-            <th style="width:10%">Price</th>
-            <th style="width:8%">Quantity</th>
-            <th style="width:22%" class="text-center">Subtotal</th>
+            <th style="width:50%">Sản phẩm</th>
+            <th style="width:10%">Giá</th>
+            <th style="width:8%">Số lượng</th>
+            <th style="width:22%" class="text-center">Tổng tiền</th>
             <th style="width:10%"></th>
         </tr>
     </thead>
@@ -26,11 +26,11 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">${{ $details['price'] }}</td>
+                    <td data-th="Price">{{ $details['price'] }}</td>
                     <td data-th="Quantity">
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
                     </td>
-                    <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                    <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }}</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -40,7 +40,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right"><h3><strong>Tổng tiền ${{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
@@ -61,7 +61,7 @@
         <input type="text" class="form-control" name="address" placeholder="Address" style="margin-top: 20px" />
         <input type="text" class="form-control" name="message" placeholder="Message" style="margin-top: 20px" />
         <input type="hidden" class="form-control" name="total" />
-        <button type="submit" style="margin-top: 20px" class="btn btn-success">Submit</button>
+        <button type="submit" style="margin-top: 20px" class="btn btn-success">Đặt hàng</button>
     </form>
 </div>
 

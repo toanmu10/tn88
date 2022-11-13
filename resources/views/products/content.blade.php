@@ -3,7 +3,7 @@
     <div class="container p-t-80">
         <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
             <a href="/" class="stext-109 cl8 hov-cl1 trans-04">
-                Home
+                Trang chủ
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
 
@@ -144,30 +144,23 @@
                 <div class="tab01">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item p-b-10">
+                        <!-- <li class="nav-item p-b-10">
                             <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
+                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Đánh giá (1)</a>
                         </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content p-t-43">
                         <!-- - -->
-                        <div class="tab-pane fade show active" id="description" role="tabpanel">
-                            <div class="how-pos2 p-lr-15-md">
-                                <p class="stext-102 cl6">
-                                    {!! $product->description !!}
-                                </p>
-                            </div>
-                        </div>
 
                         <!-- - -->
 
                         <!-- - -->
-                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <div class="tab-pane fade show active" id="reviews" role="tabpanel">
                             <div class="row">
                                 <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
                                     <div class="p-b-30 m-lr-15-sm">
@@ -205,10 +198,6 @@
                                                 Add a review
                                             </h5>
 
-                                            <p class="stext-102 cl6">
-                                                Your email address will not be published. Required fields are marked *
-                                            </p>
-
                                             <div class="flex-w flex-m p-t-50 p-b-23">
 												<span class="stext-102 cl3 m-r-16">
 													Your Rating
@@ -230,23 +219,11 @@
                                                     <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
                                                               id="review" name="review"></textarea>
                                                 </div>
-
-                                                <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="name">Name</label>
-                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
-                                                           type="text" name="name">
-                                                </div>
-
-                                                <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="email">Email</label>
-                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email"
-                                                           type="text" name="email">
-                                                </div>
                                             </div>
 
                                             <button
                                                 class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-                                                Submit
+                                                Đánh giá
                                             </button>
                                         </form>
                                     </div>

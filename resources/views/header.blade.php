@@ -25,16 +25,16 @@
                         <li class="nav-item active">
                             <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                                <button type="submit" class="nav-link btn-logout" >Logout</button>
+                                <button type="submit" class="nav-link btn-logout" >Đăng xuất</button>
                             </form>
                         </li>
                         @endif
                         @if (!Auth::user())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('login') }}">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            <a class="nav-link" href="{{ route('register') }}">Đăng kí</a>
                         </li>
                         @endif
                     </ul>
@@ -56,7 +56,7 @@
         <div class="col-lg-12 col-sm-12 col-12 ">
             <div class="dropdown">
                 <button type="button" class="btn btn-info" data-toggle="dropdown">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                 </button>
                 <div class="dropdown-menu">
                     <div class="row total-header-section">
@@ -68,7 +68,7 @@
                             @php $total += $details['price'] * $details['quantity'] @endphp
                         @endforeach
                         <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                            <p>Total: <span class="text-info">$ {{ $total }}</span></p>
+                            <p>Tổng tiền: <span class="text-info">{{ $total }}</span></p>
                         </div>
                     </div>
                     @if(session('cart'))
@@ -79,14 +79,14 @@
                                 </div>
                                 <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                     <p>{{ $details['name'] }}</p>
-                                    <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                                    <span class="price text-info"> {{ $details['price'] }}</span> <span class="count"> Số lượng:{{ $details['quantity'] }}</span>
                                 </div>
                             </div>
                         @endforeach
                     @endif
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block">View all</a>
+                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block">Xem tất cả</a>
                         </div>
                     </div>
                 </div>

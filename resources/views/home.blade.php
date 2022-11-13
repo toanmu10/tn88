@@ -13,7 +13,7 @@
                             <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                                 <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
                             <span class="ltext-101 cl2 respon2">
-                                HOT 2021
+                                HOT 2022
                             </span>
                                 </div>
 
@@ -25,7 +25,7 @@
 
                                 <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
                                     <a href="{{ $banner->url }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                        Shop Now
+                                        Mua ngay
                                     </a>
                                 </div>
                             </div>
@@ -45,20 +45,20 @@
         <div class="container">
             <div class="p-b-10">
                 <h3 class="ltext-103 cl5">
-                    Product Overview
+                    Tổng quan sản phẩm
                 </h3>
             </div>
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                        All Products
+                        Tất cả sản phẩm
                     </button>
                 </div>
             </div>
 
             <div id="loadProduct">
-                @include('products.list')
+            @include('products.list')
             </div>
 
 

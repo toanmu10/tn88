@@ -12,10 +12,10 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Order Date</th>
-                                <th>Total price</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>Ngày đặt hàng</th>
+                                <th>Tổng tiền</th>
+                                <th>Tình trạng</th>
+                                <th>Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,7 +27,7 @@
                                         {{$item->status == '0' ? 'Chờ duyệt' : 'Đã xác nhận'}}
                                     </td>
                                     <td>
-                                        <a href="{{ url('view-order/'.$item->id) }}"class="btn btn-primary">View</a>
+                                        <a href="{{ url('view-order/'.$item->id) }}"class="btn btn-primary">Chi tiết</a>
                                     </td>
                                 </tr>
                             @endforeach

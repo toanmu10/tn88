@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('categories')->group(function () {
                 Route::get('add', [CategoryController::class, 'create']);
                 Route::post('add', [CategoryController::class, 'store']);
-                Route::get('list', [CategoryController::class, 'index']);
+                Route::get('list', [CategoryController::class, 'index'])->name('test');
                 Route::get('edit/{category}', [CategoryController::class, 'show']);
                 Route::post('edit/{category}', [CategoryController::class, 'update']);
                 Route::DELETE('destroy', [CategoryController::class, 'destroy']);
@@ -96,7 +96,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
     Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
     
-    Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index']);
+    Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index'])->name('cates.index');
     Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
 
     Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');

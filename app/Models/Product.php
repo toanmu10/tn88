@@ -30,7 +30,7 @@ class Product extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (isset($data['keyword'])) {
+        if (isset($data['keyword'])){
             $query->where('name', 'LIKE', '%' . $data['keyword'] . '%')->orWhere('description', 'LIKE', '%' . $data['keyword'] . '%');
         }
     }
