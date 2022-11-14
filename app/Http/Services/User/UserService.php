@@ -15,13 +15,7 @@ class UserService
     {
         try {
             #$request->except('_token');
-            User::create([
-                'username' => (string)$request->input('username'),
-                'password' => (int)$request->input('password'),
-                'email' => (string)$request->input('email'),
-                'active' => (string)$request->input('active')
-            ]
-                
+            User::create($request->all()
             );
             Session::flash('success', 'Thêm User mới thành công');
         } catch (\Exception $err) {
@@ -39,22 +33,19 @@ class UserService
         return User::whereNot('role_id', 0)->get();
     }
 
-    public function update($request, $User)
+    public function update($request, $user)
     {
         try {
-            $User->fill($request->input());
-            $User->save();
-            Session::flash('success', 'Cập nhật User thành công');
+            $user->fill($request->input());
+            $user->save();
+            Session::flash('success', 'Cập nhật thành công');
         } catch (\Exception $err) {
-            Session::flash('error', 'Cập nhật User Lỗi');
-            Log::info($err->getMessage());
-
+            Session::flash('error', 'Có lỗi vui lòng thử lại');
+            \Log::info($err->getMessage());
             return false;
         }
-
         return true;
     }
-
     public function destroy($request)
     {
         $User = User::where('id', $request->input('id'))->first();

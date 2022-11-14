@@ -89,6 +89,10 @@ class CategoryService
             $query->orderBy('price', $request->input('price'));
         }
 
+        if ($request->search) {
+            $query->where('name', 'LIKE', "%{$request['search']}%");
+        }
+
         return $query
             ->orderByDesc('id')
             ->paginate(12)

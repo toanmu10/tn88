@@ -11,43 +11,42 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="">Họ tên</label>
+                            <label for="" style=" margin-left: 5px">Họ tên</label>
                             <div class="border p-2">{{$orders->name}}</div>
-                            <label for="">Email</label>
+                            <label for="" style="margin-top: 10px; margin-left: 5px">Email</label>
                             <div class="border p-2">{{$orders->email}}</div>
-                            <label for="">SDT</label>
+                            <label for="" style="margin-top: 10px; margin-left: 5px">SDT</label>
                             <div class="border p-2">{{$orders->phone_number}}</div>
-                            <label for="">Địa chỉ</label>
+                            <label for="" style="margin-top: 10px; margin-left: 5px">Địa chỉ</label>
                             <div class="border p-2">{{$orders->address}}</div>
                         </div>
                         <div class="col-md-6">
                         <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Tên sản phẩm</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Ảnh</th>
+                                <th style="text-align:center">Tên sản phẩm</th>
+                                <th style="text-align:center">Giá</th>
+                                <th style="text-align:center">Số lượng</th>
+                                <th style="text-align:center">Ảnh</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($orders->orderDetails as $item)
                                 <tr>
-                                    <td>{{ $item->products->name}}</td>
-                                    <td>{{ $item->price}}</td>
-                                    <td>{{ $item->qty}}</td>
-                                    <td><img src="{{ $item->products->thumb}}" width="50px" alt=""></td>
+                                    <td style="text-align:center">{{ $item->products->name}}</td>
+                                    <td style="text-align:center">{{ number_format($item->price)}}</td>
+                                    <td style="text-align:center">{{ $item->qty}}</td>
+                                    <td style="text-align:center"><img src="{{ $item->products->thumb}}" width="50px" alt=""></td>
 
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                     <h4>
-                        Total : {{ $orders->total }}
+                        Tổng tiền : {{ number_format($orders->total) }}
                     </h4>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

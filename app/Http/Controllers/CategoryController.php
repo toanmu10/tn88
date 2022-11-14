@@ -22,7 +22,9 @@ class CategoryController extends Controller
         return view('category', [
             'title' => $category->name,
             'products' => $products,
-            'category'  => $category
+            'category'  => $category,
+            'slug' => $slug,
+            'id' => $id
         ]);
     }
 }

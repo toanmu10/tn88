@@ -36,11 +36,12 @@ class BannerController extends Controller
         return redirect()->back();
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $data = $request->all();
         return view('admin.banner.list', [
             'title' => 'Danh Sách banner Mới Nhất',
-            'banners' => $this->banner->get()
+            'banners' => Banner::where('active', 1)->search($data)->paginate(10)
         ]);
     }
 

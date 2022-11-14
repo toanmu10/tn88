@@ -15,10 +15,10 @@ class Helper
             if ($category->parent_id == $parent_id) {
                 $html .= '
                     <tr>
-                        <td>' . $char . $category->name . '</td>
-                        <td>' . self::active($category->active) . '</td>
-                        <td>' . $category->updated_at . '</td>
-                        <td>
+                        <td style="text-align: center">' . $char . $category->name . '</td>
+                        <td style="text-align: center">' . self::active($category->active) . '</td>
+                        <td style="text-align: center">' . $category->updated_at . '</td>
+                        <td style="text-align: center">
                             <a class="btn btn-primary btn-sm" href="/admin/categories/edit/' . $category->id . '">
                                 <i class="fas fa-edit"></i>
                             </a>

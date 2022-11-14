@@ -10,8 +10,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="user">Tên Người dùng</label>
-                        <input type="text" name="username" value="{{ old('name') }}" class="form-control"  placeholder="Nhập username">
+                        <label for="user">Tên người dùng</label>
+                        <input type="text" name="name" value="{{ old('name') }}" class="form-control"  placeholder="Nhập tên người dùng">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="user">Tên đăng nhập</label>
+                        <input type="text" name="username" value="{{ old('username') }}" class="form-control"  placeholder="Nhập username">
                     </div>
                 </div>
 
@@ -29,20 +36,30 @@
                     </div>
                 </div>
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <input type="text" name="address" value="{{ old('address') }}" class="form-control"  placeholder="Nhập địa chỉ người dùng">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phone_number">Số điện thoại</label>
+                        <input type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control"  placeholder="Nhập SĐT người dùng">
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label>Quyền</label>
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" value="3" type="radio" id="active" name="active" checked="">
-                        <label for="active" class="custom-control-label">Khách hàng</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" value="2" type="radio" id="no_active" name="active" >
-                        <label for="no_active" class="custom-control-label">Nhân viên bán hàng</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" value="1" type="radio" id="no_active" name="active" >
-                        <label for="no_active" class="custom-control-label">Nhân viên kho</label>
-                    </div>
+                <label>Kích Hoạt</label>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="1" type="radio" id="active" name="role_id" checked="">
+                    <label for="active" class="custom-control-label">Nhân viên kho</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value="2" type="radio" id="no_active" name="role_id" >
+                    <label for="no_active" class="custom-control-label">Nhân viên bán hàng</label>
+                </div>
             </div>
             </div>
         </div>

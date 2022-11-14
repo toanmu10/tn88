@@ -24,7 +24,7 @@
         </div>
 
         <!-- SidebarSearch Form -->
-        <div class="form-inline">
+        <!-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
@@ -33,7 +33,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -42,7 +42,7 @@
                      with font-awesome or any other icon font library -->
                      <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-bars"></i>
+                    <i class="nav-icon fas fa-users"></i>
                         <p> Tài khoản
                             <i class="right fas fa-angle-left"></i>
                         </p>
@@ -51,13 +51,13 @@
                         <li class="nav-item">
                             <a href="/admin/users/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm ng dùng</p>
+                                <p>Thêm người dùng</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/admin/users/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Sách ng dùng</p>
+                                <p>Danh sách người dùng</p>
                             </a>
                         </li>
 

@@ -24,4 +24,11 @@ class Order extends Model
     public function products() {
         return $this->belongsToMany(Product::class, 'order_details', 'order_id');
     }
+
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['search'])) {
+            $query->where('name', 'LIKE', '%' . $data['search'] . '%');
+        }
+    }
 }

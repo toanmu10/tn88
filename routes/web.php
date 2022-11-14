@@ -41,9 +41,9 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('users')->group(function () {
                 Route::get('add', [UserController::class, 'create']);
                 Route::post('add', [UserController::class, 'store']);
-                Route::get('list', [UserController::class, 'index']);
-                Route::get('edit/{category}', [UserController::class, 'show']);
-                Route::post('edit/{category}', [UserController::class, 'update']);
+                Route::get('list', [UserController::class, 'index'])->name('test1');
+                Route::get('edit/{user}', [UserController::class, 'show']);
+                Route::post('edit/{user}', [UserController::class, 'update']);
                 Route::DELETE('destroy', [UserController::class, 'destroy']);
             });
     
@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('categories')->group(function () {
                 Route::get('add', [CategoryController::class, 'create']);
                 Route::post('add', [CategoryController::class, 'store']);
-                Route::get('list', [CategoryController::class, 'index']);
+                Route::get('list', [CategoryController::class, 'index'])->name('test3');
                 Route::get('edit/{category}', [CategoryController::class, 'show']);
                 Route::post('edit/{category}', [CategoryController::class, 'update']);
                 Route::DELETE('destroy', [CategoryController::class, 'destroy']);
@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('products')->group(function () {
                 Route::get('add', [ProductController::class, 'create']);
                 Route::post('add', [ProductController::class, 'store']);
-                Route::get('list', [ProductController::class, 'index']);
+                Route::get('list', [ProductController::class, 'index'])->name('test2');
                 Route::get('edit/{product}', [ProductController::class, 'show']);
                 Route::post('edit/{product}', [ProductController::class, 'update']);
                 Route::DELETE('destroy', [ProductController::class, 'destroy']);
@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function () {
             Route::prefix('banners')->group(function () {
                 Route::get('add', [BannerController::class, 'create']);
                 Route::post('add', [BannerController::class, 'store']);
-                Route::get('list', [BannerController::class, 'index']);
+                Route::get('list', [BannerController::class, 'index'])->name('test');
                 Route::get('edit/{banner}', [BannerController::class, 'show']);
                 Route::post('edit/{banner}', [BannerController::class, 'update']);
                 Route::DELETE('destroy', [BannerController::class, 'destroy']);
@@ -96,7 +96,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
     Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
     
-    Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index']);
+    Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\CategoryController::class, 'index'])->name('cates.index');
     Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
 
     Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
