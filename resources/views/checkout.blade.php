@@ -16,23 +16,31 @@
         @php $total = 0 @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
+
                 @php $total += $details['price'] * $details['quantity'] @endphp
                 <tr data-id="{{ $id }}">
                     <td data-th="Product">
                         <div class="row">
                             <div class="col-sm-3 hidden-xs"><img src="{{ $details['image'] }}" width="100" height="100" class="img-responsive"/></div>
-                            <div class="col-sm-9">
-                                <h4 class="nomargin" style="font-family: 'Roboto', sans-serif;" >{{ $details['name'] }}</h4>
+                            <div class="col-sm-9" style="margin-top:30px">
+                                <h4 class="nomargin" style="font-family: 'Roboto', sans-serif;">{{ $details['name'] }}</h4>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price" style="font-family: 'Roboto', sans-serif;" >{{ $details['price'] }}</td>
+                    <td data-th="Price" style="font-family: 'Roboto', sans-serif; margin-top:30px"><div style="font-family: 'Roboto', sans-serif; margin-top:30px">
+                    {{ number_format($details['price']) }}
+                    </div></td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" style="margin-top:20px" />
                     </td>
-                    <td data-th="Subtotal" class="text-center" style="font-family: 'Roboto', sans-serif;" >{{ $details['price'] * $details['quantity'] }}</td>
+                    <td data-th="Subtotal" class="text-center" style="font-family: 'Roboto', sans-serif;">
+                    <div style="font-family: 'Roboto', sans-serif; margin-top:30px">
+                    {{ number_format($details['price'] * $details['quantity']) }}
+                </div>
+                </td>
+                    
                     <td class="actions" data-th="">
-                        <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-danger btn-sm remove-from-cart" style="margin-top:25px"><i class="fa fa-trash-o"></i></button>
                     </td>
                 </tr>
             @endforeach
@@ -40,7 +48,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right" style="font-family: 'Roboto', sans-serif;" ><h3><strong>Tổng tiền {{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right" style="font-family: 'Roboto', sans-serif;" ><h3><strong>Tổng tiền {{ number_format($total) }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">

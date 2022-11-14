@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'username' => 'required|max:50',
-            // 'email' => 'required|email',
+            'email' => 'required|email',
             'password' => 'required|min:6'
         ];
     }
@@ -36,7 +36,7 @@ class LoginRequest extends FormRequest
             'required' => __('message.required'),
             'max' => __('message.max'),
             'min' => __('message.min'),
-            // 'email' => __('message.email'),
+            'email' => __('message.email'),
         ];
     }
 

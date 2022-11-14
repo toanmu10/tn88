@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PlaceOrderFormRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\User;
@@ -19,7 +19,7 @@ class CheckoutController extends Controller
        return view('checkout');
     }
 
-    public function placeOrder(Request $request) {
+    public function placeOrder(PlaceOrderFormRequest $request) {
 
         $total = 0 ;
         foreach(session('cart') as $a) {

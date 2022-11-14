@@ -25,15 +25,18 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'thumb' => 'required'
+            'price' => 'required||numeric',
+            'thumb' => 'required',
+            'qty' => 'required||numeric',
+            'description' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Vui lòng nhập tên sản phẩm',
-            'thumb.required' => 'Ảnh đại diện không được trống'
+            'required' => __('message.required'),
+            'numeric' => __('message.max'),
         ];
     }
 }

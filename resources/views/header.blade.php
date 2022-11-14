@@ -67,7 +67,7 @@
                             @php $total += $details['price'] * $details['quantity'] @endphp
                         @endforeach
                         <div class="col-lg-6 col-sm-6 col-6 total-section text-right" style="font-family: 'Roboto', sans-serif;">
-                            <p>Tổng tiền: <span class="text-info">{{ $total }}</span></p>
+                            <p>Tổng tiền: <span class="text-info">{{ number_format($total) }}</span></p>
                         </div>
                     </div>
                     @if(session('cart'))
