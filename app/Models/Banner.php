@@ -16,4 +16,11 @@ class Banner extends Model
         'sort_by',
         'active'
     ];
+
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['search'])) {
+            $query->where('name', 'LIKE', '%' . $data['search'] . '%');
+        }
+    }
 }

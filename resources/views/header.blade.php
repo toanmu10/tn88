@@ -7,34 +7,33 @@
             <nav class="limiter-menu-desktop container">
 
                 <!-- Logo desktop -->
-                <a href="#" class="logo">
-                    <img src="/template/images/icons/logo-01.png" alt="IMG-LOGO">
+                <a href="/" class="logo">
+                    <img src="/template/images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
-                        <li class="active-menu"><a href="/">Trang Chủ</a> </li>
 
                         {!! $categoriesHtml !!}
 
                         @if (Auth::user())
                         <li class="nav-item active">
-                            <a href="{{url('my-order')}}">Đơn hàng</a>
+                            <a href="{{url('my-order')}}" style="font-family: 'Roboto', sans-serif;">Đơn hàng</a>
                         </li>
                         <li class="nav-item active">
                             <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                                <button type="submit" class="nav-link btn-logout" >Đăng xuất</button>
+                                <button type="submit" class="nav-link btn-logout" style="font-family: 'Roboto', sans-serif;" >Đăng xuất</button>
                             </form>
                         </li>
                         @endif
                         @if (!Auth::user())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Đăng nhập</a>
+                            <a class="nav-link" href="{{ route('login') }}" style="font-family: 'Roboto', sans-serif;">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Đăng kí</a>
+                            <a class="nav-link" href="{{ route('register') }}" style="font-family: 'Roboto', sans-serif;">Đăng kí</a>
                         </li>
                         @endif
                     </ul>
@@ -67,7 +66,7 @@
                         @foreach((array) session('cart') as $id => $details)
                             @php $total += $details['price'] * $details['quantity'] @endphp
                         @endforeach
-                        <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                        <div class="col-lg-6 col-sm-6 col-6 total-section text-right" style="font-family: 'Roboto', sans-serif;">
                             <p>Tổng tiền: <span class="text-info">{{ $total }}</span></p>
                         </div>
                     </div>
@@ -78,15 +77,15 @@
                                     <img src="{{ $details['image'] }}" />
                                 </div>
                                 <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                    <p>{{ $details['name'] }}</p>
-                                    <span class="price text-info"> {{ $details['price'] }}</span> <span class="count"> Số lượng:{{ $details['quantity'] }}</span>
+                                    <p style="font-family: 'Roboto', sans-serif;">{{ $details['name'] }}</p>
+                                    <span class="price text-info" style="font-family: 'Roboto', sans-serif;"> {{ $details['price'] }}</span> <span class="count"> Số lượng:{{ $details['quantity'] }}</span>
                                 </div>
                             </div>
                         @endforeach
                     @endif
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block">Xem tất cả</a>
+                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block" style="font-family: 'Roboto', sans-serif;">Xem tất cả</a>
                         </div>
                     </div>
                 </div>

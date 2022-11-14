@@ -85,10 +85,6 @@ class CategoryService
             ->select('id', 'name', 'price', 'description', 'thumb')
             ->where('active', 1);
 
-        // if($request->input('search-product')) {
-        //     $query->where('name', 'LIKE', '%'.$request->input('search-product').'%')->get();
-        // }
-
         if ($request->input('price')) {
             $query->orderBy('price', $request->input('price'));
         }

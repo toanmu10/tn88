@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index() {
-        $orders = Order::get();
+    public function index(Request $request) {
+        $data = $request->all();
+        $orders = Order::paginate(5);
         return view('admin.order.index', [
             'title' => 'Danh Sách Đơn Hàng',
-            'orders' => $orders
+            'orders' => $orders,
+            'data' => $data
         ]);
     }
 

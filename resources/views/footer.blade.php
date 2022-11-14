@@ -1,15 +1,23 @@
 
 <!-- Footer -->
-<footer class="bg3 p-t-75 p-b-32">
+<footer class="bg3 p-t-40 p-b-32">
     <div class="container">
 
-        <div class="p-t-40">
-            <p class="stext-107 cl6 txt-center">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-            </p>
+        <div class="p-t-40 d-flex" style="justify-content: space-between; align-item:center">
+            <div>
+                <div class="contact" style="font-family: 'Roboto', sans-serif;">
+                    Số điện thoại : 0363041642
+                </div>
+                <div class="email" style="font-family: 'Roboto', sans-serif;">
+                    Email : contact.info@gmail.com
+                </div>
+                <div class="address" style="font-family: 'Roboto', sans-serif;">
+                    Địa chỉ : 37 Trần Đại Nghĩa, Hai Bà Trưng, Hoàng Mai, Hà Nội
+                </div>
+            </div>
+            <div style="font-family: 'Roboto', sans-serif; margin-top: 25px">
+                Coppy right @2022
+            </div>
         </div>
     </div>
 </footer>

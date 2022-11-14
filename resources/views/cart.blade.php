@@ -23,15 +23,15 @@
                         <div class="row">
                             <div class="col-sm-3 hidden-xs"><img src="{{ $details['image'] }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
-                                <h4 class="nomargin">{{ $details['name'] }}</h4>
+                                <h4 class="nomargin" style="font-family: 'Roboto', sans-serif;">{{ $details['name'] }}</h4>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">{{ $details['price'] }}</td>
+                    <td data-th="Price" style="font-family: 'Roboto', sans-serif;">{{ $details['price'] }}</td>
                     <td data-th="Quantity">
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
                     </td>
-                    <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }}</td>
+                    <td data-th="Subtotal" class="text-center" style="font-family: 'Roboto', sans-serif;">{{ $details['price'] * $details['quantity'] }}</td>
                     
                     <td class="actions" data-th="">
                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
@@ -42,15 +42,15 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right"><h3><strong>Tổng tiền {{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right" style="font-family: 'Roboto', sans-serif;"><h3><strong>Tổng tiền {{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                <a href="{{ url('/') }}" class="btn btn-warning"> <div style="font-family: 'Roboto', sans-serif;">Tiếp tục mua hàng</div> </a>
                 @if (Auth::user())
-                <button class="btn btn-success text-white"><a href="{{ url('checkout') }}" style="color:white">Đặt hàng</a></button>
+                <button class="btn btn-success text-white"><a href="{{ url('checkout') }}" style="color:white"><div style="font-family: 'Roboto', sans-serif;">Đặt hàng</div></a></button>
                 @else 
-                <button class="btn btn-success text-white"><a href="{{ url('login') }}" style="color:white">Đăng nhập để tiếp tục</a></button>
+                <button class="btn btn-success text-white"><a href="{{ url('login') }}" style="color:white"><div style="font-family: 'Roboto', sans-serif;">Đăng nhập để tiếp tục</div></a></button>
                 @endif
             </td>
         </tr>

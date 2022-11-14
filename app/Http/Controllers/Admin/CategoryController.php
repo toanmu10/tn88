@@ -33,11 +33,13 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $data = $request->all();
         return view('admin.category.list', [
             'title' => 'Danh Sách Danh Mục Mới Nhất',
-            'categories' => $this->categoryService->getAll()
+            'categories' => Category::where('active', 1)->search($data)->paginate(10),
+            'data' => $data
         ]);
     }
 

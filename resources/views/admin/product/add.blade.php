@@ -53,6 +53,7 @@
                 <textarea name="description" class="form-control">{{ old('description') }}</textarea>
             </div>
 
+
             <div class="form-group">
                 <label for="category">Ảnh Sản Phẩm</label>
                 <input type="file"  class="form-control" id="upload">

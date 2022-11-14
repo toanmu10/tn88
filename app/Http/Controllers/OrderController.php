@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    public function index() {
-        $orders = Order::where('user_id', Auth::id())->get();
+    public function index(Request $request) {
+        $data = $request->all();
+        $orders = Order::where('user_id', Auth::id())->paginate(5);
         return view('order.index', [
             'title' => 'Danh Sách Đơn Hàng',
-            'orders' => $orders
+            'orders' => $orders,
+            'data' => $data
         ]);
     }
 

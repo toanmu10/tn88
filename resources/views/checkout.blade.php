@@ -22,15 +22,15 @@
                         <div class="row">
                             <div class="col-sm-3 hidden-xs"><img src="{{ $details['image'] }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
-                                <h4 class="nomargin">{{ $details['name'] }}</h4>
+                                <h4 class="nomargin" style="font-family: 'Roboto', sans-serif;" >{{ $details['name'] }}</h4>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">{{ $details['price'] }}</td>
+                    <td data-th="Price" style="font-family: 'Roboto', sans-serif;" >{{ $details['price'] }}</td>
                     <td data-th="Quantity">
                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
                     </td>
-                    <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }}</td>
+                    <td data-th="Subtotal" class="text-center" style="font-family: 'Roboto', sans-serif;" >{{ $details['price'] * $details['quantity'] }}</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -40,19 +40,19 @@
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right"><h3><strong>Tổng tiền ${{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right" style="font-family: 'Roboto', sans-serif;" ><h3><strong>Tổng tiền {{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua</a>
-                <button class="btn btn-success text-white"><a href="{{ url('checkout') }}" style="color:white">Đặt hàng</a></button>
+                <a href="{{ url('/') }}" class="btn btn-warning" style="font-family: 'Roboto', sans-serif;" ><i class="fa fa-angle-left"></i> Tiếp tục mua</a>
+                <button class="btn btn-success text-white" style="font-family: 'Roboto', sans-serif;" ><a href="{{ url('checkout') }}" style="color:white">Đặt hàng</a></button>
             </td>
         </tr>
     </tfoot>
 </table>
 
 <div style="margin-top:150px; width: 70%; margin-left: 12%; margin-right: 15%">
-    <h4>Thông tin đặt hàng</h4>
+    <h4 style="font-family: 'Roboto', sans-serif;" >Thông tin đặt hàng</h4>
     <form method="POST" action="{{ url('place-order')}}">
         {{ csrf_field() }}
         <input type="text" class="form-control" name="name" placeholder="Name" value="" style="margin-top: 20px" />
@@ -61,7 +61,7 @@
         <input type="text" class="form-control" name="address" placeholder="Address" style="margin-top: 20px" />
         <input type="text" class="form-control" name="message" placeholder="Message" style="margin-top: 20px" />
         <input type="hidden" class="form-control" name="total" />
-        <button type="submit" style="margin-top: 20px" class="btn btn-success">Đặt hàng</button>
+        <button type="submit" style="margin-top: 20px" class="btn btn-success" style="font-family: 'Roboto', sans-serif;" >Đặt hàng</button>
     </form>
 </div>
 

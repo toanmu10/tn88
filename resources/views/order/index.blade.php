@@ -12,21 +12,23 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Ngày đặt hàng</th>
-                                <th>Tổng tiền</th>
-                                <th>Tình trạng</th>
-                                <th>Hành động</th>
+                                <th style="text-align: center">STT</th>
+                                <th style="text-align: center">Ngày đặt hàng</th>
+                                <th style="text-align: center">Tổng tiền</th>
+                                <th style="text-align: center">Tình trạng</th>
+                                <th style="text-align: center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($orders as $item)
+                            @foreach($orders as $key => $item)
                                 <tr>
-                                    <td>{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
-                                    <td>{{$item->total}}</td>
-                                    <td>
+                                    <td style="text-align: center">{{ (isset($data['page'])) ? ((($data['page'] - 1) * 5) + ($key + 1)) : ($key + 1) }}</td>
+                                    <td style="text-align: center">{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
+                                    <td style="text-align: center">{{number_format($item->total)}}</td>
+                                    <td style="text-align: center">
                                         {{$item->status == '0' ? 'Chờ duyệt' : 'Đã xác nhận'}}
-                                    </td>
-                                    <td>
+                                    </td style="text-align: center">
+                                    <td style="text-align: center">
                                         <a href="{{ url('view-order/'.$item->id) }}"class="btn btn-primary">Chi tiết</a>
                                     </td>
                                 </tr>

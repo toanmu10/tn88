@@ -17,11 +17,13 @@ class ProductController extends Controller
         $this->productService = $productService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $data = $request->all();
         return view('admin.product.list', [
             'title' => 'Danh Sách Sản Phẩm',
-            'products' => $this->productService->get()
+            'products' => Product::where('active', 1)->search($data)->paginate(4),
+            'data' => $data
         ]);
     }
 
