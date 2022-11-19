@@ -24,9 +24,8 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|max:50',
-            'email' => 'required|email',
-            'password' => 'required|min:6'
+            'username' => 'required',
+            'password' => 'required'
         ];
     }
 
@@ -36,15 +35,14 @@ class LoginRequest extends FormRequest
             'required' => __('message.required'),
             'max' => __('message.max'),
             'min' => __('message.min'),
-            'email' => __('message.email'),
         ];
     }
 
     public function attributes()
     {
         return [
-            'username' => 'Tên tài khoản',
-            'password' => 'Mật khẩu',
+            // 'username' => 'Tên tài khoản',
+            // 'password' => 'Mật khẩu',
         ];
     }
 }
