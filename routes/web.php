@@ -109,6 +109,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
     Route::get('my-order', [App\Http\Controllers\OrderController::class, 'index']);
     Route::get('view-order/{id}', [App\Http\Controllers\OrderController::class, 'a']);
+    Route::resource('reviews', App\Http\Controllers\RateController::class)->only(['store','update','destroy']);
 
     Route::resource('profiles', App\Http\Controllers\ProfileController::class)->only('index', 'update');
     Route::resource('change-password', App\Http\Controllers\ChangePasswordController::class)->only(['index', 'update']);

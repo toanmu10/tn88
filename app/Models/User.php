@@ -52,4 +52,8 @@ class User extends Authenticatable
             $query->where('name', 'LIKE', '%' . $data['search'] . '%');
         }
     }
+
+    public function rates() {
+        return $this->hasMany(Rate::class);
+    }
 }
