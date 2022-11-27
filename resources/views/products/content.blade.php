@@ -113,13 +113,17 @@
                                 </div>
                             </div>
                         </div>
+                        
 
                         <!--  -->
                     </div>
+                    
                 </div>
             </div>
-        </div>
-    </section>
+        <div>
+ </section>
+
+ @include('products.rate')
 
     <section class="sec-relate-product bg0 p-t-45 p-b-105">
         

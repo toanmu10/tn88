@@ -19,11 +19,16 @@ class ProductController extends Controller
     {
         $product = $this->productService->show($id);
         $productsMore = $this->productService->more($id);
+        $products = Product::find($id);
+        $replies = $products->rates()->replies()->get();
+        $rates = $products->rates()->comments()->get();
 
         return view('products.content', [
             'title' => $product->name,
             'product' => $product,
-            'products' => $productsMore
+            'products' => $productsMore,
+            'rates' => $rates,
+            'replies' => $replies
         ]);
     }
 
