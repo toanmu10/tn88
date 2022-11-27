@@ -21,6 +21,9 @@
                         <li class="nav-item active">
                             <a href="{{url('my-order')}}" style="font-family: 'Roboto', sans-serif;">Đơn hàng</a>
                         </li>
+                        <li class="nav-item">
+                    <a class="nav-link" href="{{ route('profiles.index') }}">Xin chào, {{Auth::user()->username}}</a>
+                </li>
                         <li class="nav-item active">
                             <form action="{{ route('logout') }}" method="POST">
                             @csrf
