@@ -9,6 +9,10 @@ use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\ReceiptController;
+use App\Http\Controllers\Admin\ReceiptDetailController;
+
 
 
 
@@ -77,6 +81,25 @@ Route::middleware(['auth'])->group(function () {
                 Route::post('edit/{banner}', [BannerController::class, 'update']);
                 Route::DELETE('destroy', [BannerController::class, 'destroy']);
             });
+
+            Route::prefix('suppliers')->group(function () {
+                Route::get('add', [SupplierController::class, 'create']);
+                Route::post('add', [SupplierController::class, 'store']);
+                Route::get('list', [SupplierController::class, 'index'])->name('aaa');
+                Route::get('edit/{supplier}', [SupplierController::class, 'show']);
+                Route::post('edit/{supplier}', [SupplierController::class, 'update']);
+                Route::DELETE('destroy', [SupplierController::class, 'destroy']);
+            });
+
+            Route::prefix('receipts')->group(function () {
+                Route::get('list', [ReceiptController::class, 'index'])->name('receipt');
+                Route::post('add', [ReceiptController::class, 'add'])->name('add');
+
+            });
+            Route::prefix('receipt-detail')->group(function () {
+                Route::post('testt', [ReceiptDetailController::class, 'testt'])->name('testt');
+            });
+            Route::get('view-receipt/{id}', [ReceiptController::class, 'view']);
 
             Route::get('orders', [OrderController::class, 'index']);
             Route::get('view-order/{id}', [OrderController::class, 'view']);

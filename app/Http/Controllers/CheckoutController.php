@@ -8,25 +8,22 @@ use App\Models\Order;
 use App\Models\User;
 use App\Models\OrderDetail;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Session;
 
 
 class CheckoutController extends Controller
 {
     public function index() {
-
-
        return view('checkout');
     }
 
-    public function placeOrder(PlaceOrderFormRequest $request) {
+    public function placeOrder(Request $request) {
 
         $total = 0 ;
         foreach(session('cart') as $a) {
             $total += ( $a['quantity']* $a['price'] );
-            
-         }
-        
+        }
 
         $order = new Order();
         $order->user_id = Auth::id();
@@ -37,10 +34,6 @@ class CheckoutController extends Controller
         $order->address = $request->input('address');
         $order->total = $total;
         $order->save();
-
-
-
-       
 
         foreach(session('cart') as $id => $details)
         {

@@ -39,13 +39,6 @@
                     <label>Số lượng </label>
                     <input type="number" name="qty" value="{{ old('qty') }}"  class="form-control" >
                 </div>
-
-                <!-- <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="category">Giá Giảm</label>
-                        <input type="number" name="price_sale" value="{{ old('price_sale') }}"  class="form-control" >
-                    </div>
-                </div> -->
             </div>
 
             <div class="form-group">
