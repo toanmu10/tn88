@@ -14,7 +14,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th style="text-align: center">STT</th>
                 <th style="text-align: center">Tên danh mục</th>
                 <th style="text-align: center">Tình trạng</th>
                 <th style="text-align: center">Cập nhật</th>

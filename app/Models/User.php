@@ -53,6 +53,10 @@ class User extends Authenticatable
         }
     }
 
+    public function receipts() {
+        return $this->hasMany(Receipt::class);
+    }
+
     public function rates() {
         return $this->hasMany(Rate::class);
     }

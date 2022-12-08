@@ -153,6 +153,55 @@
 
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-bars"></i>
+                        <p> Nhập kho
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/receipts/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lập phiếu nhập kho</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/receipts/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách phiếu nhập kho</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-bars"></i>
+                        <p> Nhà cung cấp
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/suppliers/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm nhà cung cấp</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/suppliers/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách nhà cung cấp</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
