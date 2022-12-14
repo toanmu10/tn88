@@ -19,22 +19,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($receipts->receiptDetails as $item)
-                                <tr>
+                            @foreach($receipts->receiptDetails as $item)                            
+                               <tr>
                                     <td style="text-align: center">1</td>
                                     <td style="text-align: center">{{ $item->products->name}}</td>
                                     <td style="text-align: center">{{ number_format($item->import_price)}}</td>
                                     <td style="text-align: center">{{ $item->qty}}</td>
                                     <td style="text-align: center">{{ $item->total}}</td>
-
-                                </tr>
+                                </tr>                 
                             @endforeach
                         </tbody>
-</table>
-                    
+                        </table>
+                        <div>Tổng tiền : {{number_format($receipts->total_receipt)}}</div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

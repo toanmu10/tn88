@@ -35,6 +35,7 @@ class CheckoutController extends Controller
         $order->total = $total;
         $order->save();
 
+
         foreach(session('cart') as $id => $details)
         {
             OrderDetail::create([
@@ -44,9 +45,13 @@ class CheckoutController extends Controller
                 'price' => $details['price'],
             ]);
 
-            // $product = Product::where('id', $item->product_id)->first();
-            // $product->qty = $product->qty - $item->qty;
-            // $product->update();
+            
+            $products = Product::where('id', $details['product_id'])->get();
+            foreach($products as $product) {
+                $product->update([
+                    'qty' => $product->qty - $details['quantity'],
+                ]);
+            }
         }
 
         $user = User::where('id', Auth::user()->id)->first();

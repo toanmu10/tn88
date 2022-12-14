@@ -82,31 +82,21 @@
                             Giá : {{ number_format($product->price) }}
                         </p>
 
+                        <p class="stext-102 cl3 p-t-23" style="color: black; font-size: 16px" style="font-family: 'Roboto', sans-serif;">
+                            Số lượng sản phẩm còn lại trong kho : {{ $product->qty }}
+                        </p>
+
                         <!--  -->
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="size-204 flex-w flex-m respon6-next">
                                     <!-- <form action="/add-cart" method="post"> -->
                                         @if ($product->price !== NULL)
-                                            <!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-minus"></i>
-                                                </div>
-
-                                                <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                                       name="num_product" value="1">
-
-                                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-plus"></i>
-                                                </div>
-                                            </div> -->
+                                            @if($product->qty > 0)
                                             <button class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning" style="width:430px; transform: translate(-110px, 0)"role="button" style="font-family: 'Roboto', sans-serif;">Thêm vào giỏ hàng</a> </button>
-
-                                            <!-- <button type="submit"
-                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
-                                                Add to cart
-                                            </button> -->
-                                            <!-- <input type="hidden" name="product_id" value="{{ $product->id }}"> -->
+                                            @else
+                                            <button class="btn-holder btn btn-warning" style="width:430px; transform: translate(-110px, 0)"role="button" style="font-family: 'Roboto', sans-serif;"disabled> Hết hàng </button>
+                                            @endif
                                         @endif
                                         @csrf
                                     </form>

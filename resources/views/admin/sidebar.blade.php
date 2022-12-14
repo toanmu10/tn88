@@ -163,12 +163,6 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/receipts/add" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Lập phiếu nhập kho</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="/admin/receipts/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách phiếu nhập kho</p>

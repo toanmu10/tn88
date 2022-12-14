@@ -28,7 +28,8 @@ class Order extends Model
     public function scopeSearch($query, $data)
     {
         if (isset($data['search'])) {
-            $query->where('name', 'LIKE', '%' . $data['search'] . '%');
+            $query->where('created_at','LIKE', '%'.$data['search'].'%');
+            // $query->where('user_id','LIKE', '%'.$data[search].'%');
         }
     }
 }

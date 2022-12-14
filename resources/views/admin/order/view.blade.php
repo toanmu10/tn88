@@ -51,6 +51,8 @@
                             <option selected>Mở</option>
                             <option {{ $orders->status == '0' ? 'selected' : '' }} value="0">Chưa duyệt</option>
                             <option {{ $orders->status == '1' ? 'selected' : '' }} value="1">Đã duyệt</option>
+                            <option {{ $orders->status == '2' ? 'selected' : '' }} value="2">Đang giao hàng</option>
+                            <option {{ $orders->status == '3' ? 'selected' : '' }} value="3">Đã giao hàng</option>
                         </select>
                         <button type="submit" class="btn-primary" style="padding: 3px 20px; border-radius: 10px; margin-left: 20px">Cập nhật</button>
                         </form>

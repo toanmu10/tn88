@@ -6,6 +6,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                <form method="GET" action="{{ route('searchorder')}}">
+                    <div class="dis-none panel-search w-full p-t-10 p-b-15" style="margin: 20px;">
+                        <div class="bor8 dis-flex p-l-15">
+                        <input name="search" id="search_input" class="mtext-107 cl2 size-114 plh2 p-r-15" type="date" placeholder="Nhập từ khóa" style="padding: 5px; border-radius: 15px" />
+                            <button style=" border-radius: 15px;padding: 5px;" class="btn-primary size-113 flex-c-m fs-16 cl2 hov-cl1 tran-04" type="submit" >
+                                Tìm kiếm
+                            </button>
+                        </div>
+    </div>
+</form>
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -25,7 +35,15 @@
                                     <td style="text-align: center">{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                     <td style="text-align: center">{{number_format($item->total)}}</td>
                                     <td style="text-align: center">
-                                        {{$item->status == '0' ? 'Chờ duyệt' : 'Đã xác nhận'}}
+                                            @if ($item->status == '0')
+                                            Chờ duyệt
+                                            @elseif ($item->status == '1')
+                                            Đã duyệt
+                                            @elseif ($item->status == '2')
+                                            Đang giao hàng
+                                            @elseif ($item->status == '3')
+                                            Hoàn thành
+                                            @endif
                                     </td>
                                     <td style="text-align: center">
                                         <a href="{{ url('admin/view-order/'.$item->id) }}"class="btn btn-primary">Xem chi tiết</a>

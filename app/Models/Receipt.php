@@ -30,5 +30,15 @@ class Receipt extends Model
     public function receiptDetails() {
         return $this->hasMany(ReceiptDetail::class);
     }
-    
+    public function getTotalReceiptAttribute()
+    {
+        return $this->receiptDetails->sum('total');
+    }
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['search'])) {
+            $query->where('created_at','LIKE', '%'.$data['search'].'%');
+            // $query->where('user_id','LIKE', '%'.$data[search].'%');
+        }
+    }
 }
