@@ -41,6 +41,7 @@
                                         {{ $receipt->user->name}}
                                     </td>
                                     <td style="text-align: center">
+                                    {{ $receipt->supplier->name ?? 'None' }}
                                     </td>
                                     <td style="text-align: center">
                                     <a href="{{ url('admin/view-receipt/'.$receipt->id) }}"class="btn btn-primary">Xem chi tiết</a>
@@ -49,7 +50,9 @@
                             @endforeach
                         </tbody>
                     </table>
-
+                    <div class="card-footer clearfix">
+        {!! $receipts->links() !!}
+    </div>
 @endsection
 
 

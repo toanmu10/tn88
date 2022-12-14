@@ -100,8 +100,11 @@
                                                     <i class="fs-16 zmdi zmdi-plus"></i>
                                                 </div>
                                             </div> -->
+                                            @if($product->qty > 0)
                                             <button class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning" style="width:430px; transform: translate(-110px, 0)"role="button" style="font-family: 'Roboto', sans-serif;">Thêm vào giỏ hàng</a> </button>
-
+                                            @else
+                                            <button class="btn-holder btn btn-warning" style="width:430px; transform: translate(-110px, 0)"role="button" style="font-family: 'Roboto', sans-serif;"disabled> Hết hàng </button>
+                                            @endif
                                             <!-- <button type="submit"
                                                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
                                                 Add to cart

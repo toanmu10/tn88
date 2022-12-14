@@ -13,7 +13,7 @@ class ReceiptController extends Controller
 {
     public function index()
     {
-        $receipts = Receipt::get();
+        $receipts = Receipt::paginate(6);
         $suppliers = Supplier::get();
         return view('admin.receipt.list', [
            'title' => 'Danh sach phiếu nhập kho',
@@ -32,7 +32,6 @@ class ReceiptController extends Controller
         return view('admin.receipt.add', [
             'title' => 'Thêm phiếu nhập kho',
             'products' => $products,
-            
             'receipts' => $receipts,
          ]);
     }

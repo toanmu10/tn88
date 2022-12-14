@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Supplier extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -15,10 +17,6 @@ class Supplier extends Model
         'address',
         'active'
     ];
-
-    public function products() {
-        return $this->belongsToMany(Product::class, 'supplier_products', 'supplier_id');
-    }
 
     public function receipts() {
         return $this->hasMany(Receipt::class);

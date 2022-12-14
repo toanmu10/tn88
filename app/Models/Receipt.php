@@ -30,5 +30,8 @@ class Receipt extends Model
     public function receiptDetails() {
         return $this->hasMany(ReceiptDetail::class);
     }
-    
+    public function getTotalReceiptAttribute()
+    {
+        return $this->receiptDetails->sum('total');
+    }
 }

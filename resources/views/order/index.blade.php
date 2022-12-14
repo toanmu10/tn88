@@ -26,7 +26,15 @@
                                     <td style="text-align: center">{{ date('d-m-Y', strtotime($item->created_at)) }}</td>
                                     <td style="text-align: center">{{number_format($item->total)}}</td>
                                     <td style="text-align: center">
-                                        {{$item->status == '0' ? 'Chờ duyệt' : 'Đã xác nhận'}}
+                                            @if ($item->status == '0')
+                                            Chờ duyệt
+                                            @elseif ($item->status == '1')
+                                            Đã duyệt
+                                            @elseif ($item->status == '2')
+                                            Đang giao hàng
+                                            @elseif ($item->status == '3')
+                                            Hoàn thành
+                                            @endif
                                     </td style="text-align: center">
                                     <td style="text-align: center">
                                         <a href="{{ url('view-order/'.$item->id) }}"class="btn btn-primary">Chi tiết</a>
