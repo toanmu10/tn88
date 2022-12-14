@@ -101,7 +101,7 @@ Route::middleware(['auth'])->group(function () {
             });
             Route::get('view-receipt/{id}', [ReceiptController::class, 'view']);
 
-            Route::get('orders', [OrderController::class, 'index']);
+            Route::get('orders', [OrderController::class, 'index'])->name('searchorder');
             Route::get('view-order/{id}', [OrderController::class, 'view']);
             Route::put('update-order/{id}', [OrderController::class, 'updateOrder']);
 
@@ -130,7 +130,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
     Route::post('place-order', [App\Http\Controllers\CheckoutController::class, 'placeOrder']);
 
-    Route::get('my-order', [App\Http\Controllers\OrderController::class, 'index']);
+    Route::get('my-order', [App\Http\Controllers\OrderController::class, 'index'])->name('order');
     Route::get('view-order/{id}', [App\Http\Controllers\OrderController::class, 'a']);
     Route::resource('reviews', App\Http\Controllers\RateController::class)->only(['store','update','destroy']);
 

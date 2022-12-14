@@ -11,7 +11,7 @@ class OrderController extends Controller
 {
     public function index(Request $request) {
         $data = $request->all();
-        $orders = Order::where('user_id', Auth::id())->paginate(5);
+        $orders = Order::where('user_id', Auth::id())->search($data)->paginate(5);
         return view('order.index', [
             'title' => 'Danh Sách Đơn Hàng',
             'orders' => $orders,

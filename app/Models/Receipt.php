@@ -34,4 +34,11 @@ class Receipt extends Model
     {
         return $this->receiptDetails->sum('total');
     }
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['search'])) {
+            $query->where('created_at','LIKE', '%'.$data['search'].'%');
+            // $query->where('user_id','LIKE', '%'.$data[search].'%');
+        }
+    }
 }

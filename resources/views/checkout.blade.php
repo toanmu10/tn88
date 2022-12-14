@@ -63,10 +63,10 @@
     <h4 style="font-family: 'Roboto', sans-serif;" >Thông tin đặt hàng</h4>
     <form method="POST" action="{{ url('place-order')}}">
         {{ csrf_field() }}
-        <input type="text" class="form-control" name="name" placeholder="Name" value="" style="margin-top: 20px" />
-        <input type="text" class="form-control" name="email" placeholder="Email" style="margin-top: 20px" />
-        <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" style="margin-top: 20px" />
-        <input type="text" class="form-control" name="address" placeholder="Address" style="margin-top: 20px" />
+        <input type="text" class="form-control" name="name" placeholder="Name" value="" style="margin-top: 20px" value="{{Auth::user()->name}}" />
+        <input type="text" class="form-control" name="email" placeholder="Email" style="margin-top: 20px" value="{{Auth::user()->email}}" />
+        <input type="text" class="form-control" name="phone_number" placeholder="Phone Number" style="margin-top: 20px" value="{{Auth::user()->phone_number}}" />
+        <input type="text" class="form-control" name="address" placeholder="Address" style="margin-top: 20px" value="{{Auth::user()->address}}" />
         <input type="text" class="form-control" name="message" placeholder="Message" style="margin-top: 20px" />
         <input type="hidden" class="form-control" name="total" />
         <button type="submit" style="margin-top: 20px" class="btn btn-success" style="font-family: 'Roboto', sans-serif;" >Đặt hàng</button>

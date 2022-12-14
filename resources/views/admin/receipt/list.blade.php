@@ -18,6 +18,16 @@
     <button type="submit" class="btn btn-success text-white">Tao phieu nhap kho</button>
 </form>
 
+<form method="GET" action="{{ route('receipt')}}">
+                    <div class="dis-none panel-search w-full p-t-10 p-b-15" style="margin: 20px;">
+                        <div class="bor8 dis-flex p-l-15">
+                        <input name="search" id="search_input" class="mtext-107 cl2 size-114 plh2 p-r-15" type="date" placeholder="Nhập từ khóa" style="padding: 5px; border-radius: 15px" />
+                            <button style=" border-radius: 15px;padding: 5px;" class="btn-primary size-113 flex-c-m fs-16 cl2 hov-cl1 tran-04" type="submit" >
+                                Tìm kiếm
+                            </button>
+                        </div>
+    </div>
+</form>
 <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -51,8 +61,8 @@
                         </tbody>
                     </table>
                     <div class="card-footer clearfix">
-        {!! $receipts->links() !!}
-    </div>
+                        {!! $receipts->links() !!}
+                    </div>
 @endsection
 
 

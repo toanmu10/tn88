@@ -32,9 +32,6 @@ class Product extends Model
         return $this->belongsToMany(Receipt::class, 'receipt_detail', 'product_id');
     }
 
-    
-
-
     public function scopeSearch($query, $data)
     {
         if (isset($data['search'])){
