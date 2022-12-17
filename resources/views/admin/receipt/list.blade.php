@@ -5,17 +5,17 @@
 <form action="{{url('admin/receipts/add')}}" method="POST">
 {{ csrf_field() }}
     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-    <div class="form-group">
+    <div class="form-group" style="margin-left: 20px">
                     <label>Nhà cung cấp</label>
-                    <select class="form-control" name="supplier_id">
+                    <select class="form-control" name="supplier_id" style="width: 50%">
                         <option value="0"> Nhà cung cấp </option>
                         @foreach($suppliers as $supplier)
                         <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                         @endforeach
                     </select>
                 </div>
+                <button type="submit" class="btn btn-success text-white" style="margin: 20px 20px">Tạo phiếu nhập kho</button>
         </div>
-    <button type="submit" class="btn btn-success text-white">Tao phieu nhap kho</button>
 </form>
 
 <form method="GET" action="{{ route('receipt')}}">

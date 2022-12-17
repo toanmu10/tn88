@@ -84,7 +84,14 @@
                 quantity: ele.parents("tr").find(".quantity").val()
             },
             success: function (response) {
-               window.location.reload();
+                // console.log(response);
+                var a = ele.parents("tr").find(".quantity").val();
+                if(a > response) {
+                    alert("Số lượng sản phẩm không đủ");
+                }
+               else {
+                window.location.reload();
+               }
             }
         });
     });
@@ -104,6 +111,7 @@
                 },
                 success: function (response) {
                     window.location.reload();
+                    
                 }
             });
         }

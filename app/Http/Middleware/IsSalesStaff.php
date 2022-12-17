@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
+class isSalesStaff
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class IsAdmin
     public function handle($request, Closure $next)
     {
             $user = Auth::user();
-            if($user->role_id == 3) {
+            if($user->role_id == 2) {
                 return redirect()->back();
             }
             return $next($request);

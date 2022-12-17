@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                        <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered" style="margin-left: 245px;">
                         <thead>
                             <tr>
                                 <th style="text-align: center">STT</th>
@@ -19,18 +19,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($receipts->receiptDetails as $item)                            
+                            @foreach($receipts->receiptDetails as $key => $item)                            
                                <tr>
-                                    <td style="text-align: center">1</td>
+                                    <td style="text-align: center">{{$key + 1}}</td>
                                     <td style="text-align: center">{{ $item->products->name}}</td>
                                     <td style="text-align: center">{{ number_format($item->import_price)}}</td>
                                     <td style="text-align: center">{{ $item->qty}}</td>
-                                    <td style="text-align: center">{{ $item->total}}</td>
+                                    <td style="text-align: center">{{ number_format($item->total)}}</td>
                                 </tr>                 
                             @endforeach
                         </tbody>
                         </table>
-                        <div>Tổng tiền : {{number_format($receipts->total_receipt)}}</div>
+                        <div style="transform: translateX(620px);">Tổng tiền : {{number_format($receipts->total_receipt)}}</div>
                         </div>
                     </div>
                 </div>

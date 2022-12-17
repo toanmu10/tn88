@@ -60,4 +60,19 @@ class User extends Authenticatable
     public function rates() {
         return $this->hasMany(Rate::class);
     }
+
+    public function isSalesStaff()
+    {
+        return $this->where('id', '2')->exists();
+    }
+    
+    public function isWarehouseStaff()
+    {
+        return $this->where('id', '1')->exists();
+    }
+
+    public function isAdmin()
+    {
+        return $this->where('id', '0')->exists();
+    }
 }

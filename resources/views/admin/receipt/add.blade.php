@@ -12,7 +12,6 @@
                     <th style="text-align: center">Tên Sản Phẩm</th>
                     <th style="text-align: center">Số lượng</th>
                     <th style="text-align: center">Giá nhập</th>
-                    <th style="text-align: center">Hành động</th>
                 </tr>
             </thead>
             <tbody id="tablebody">
@@ -41,7 +40,6 @@
                         </span>
                         @enderror
                     </td>
-                    <td></td>
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
                     @foreach($receipts as $receipt)
                     <input type="hidden" name="receipt_id" value="{{$receipt->id}}" />
@@ -70,7 +68,10 @@
     cell3.style.textAlign = 'center';
     cell2.innerHTML = ` <input type="number" name="qty[]" min="1" max="1000" />`;
     cell3.innerHTML = `<input type="text" name="import_price[]" />`;
+
     }
+
+
 </script>
 @endsection
 

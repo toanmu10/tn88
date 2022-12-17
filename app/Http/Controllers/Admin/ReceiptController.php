@@ -16,7 +16,7 @@ public function index(Request $request)
         $receipts = Receipt::search($request->all())->paginate(6);
         $suppliers = Supplier::get();
         return view('admin.receipt.list', [
-           'title' => 'Danh sach phiếu nhập kho',
+           'title' => 'Danh sách phiếu nhập kho',
            'receipts' => $receipts,
            'suppliers' => $suppliers,
         ]);

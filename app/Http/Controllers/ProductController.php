@@ -79,10 +79,15 @@ class ProductController extends Controller
         if($request->id && $request->quantity){
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
+            $product = Product::find($cart[$request->id]["product_id"]);
+
             session()->put('cart', $cart);
             session()->flash('success', 'Cập nhật giỏ hàng thành công');
+            return $product->qty;
         }
-    }
+
+        }
+        
   
     /**
      * Write code on Method
