@@ -82,10 +82,6 @@
                             Giá : {{ number_format($product->price) }}
                         </p>
 
-                        <p class="stext-102 cl3 p-t-23" style="color: black; font-size: 16px" style="font-family: 'Roboto', sans-serif;">
-                            Số lượng sản phẩm còn lại trong kho : {{ $product->qty }}
-                        </p>
-
                         <!--  -->
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">

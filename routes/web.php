@@ -33,6 +33,7 @@ Route::get('/', function () {
 
 Route::resource('admin/users/login', LoginController::class)->only('index');
 Route::resource('admin/users/login/store', LoginController::class)->only('store');
+Route::get('logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
 

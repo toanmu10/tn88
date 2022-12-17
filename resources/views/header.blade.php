@@ -19,7 +19,7 @@
 
                         @if (Auth::user())
                         <li class="nav-item active">
-                            <a href="{{url('my-order')}}" style="font-family: 'Roboto', sans-serif;">Đơn hàng</a>
+                            <a href="{{url('my-order')}}" style="font-family: 'Roboto', sans-serif; font-weigh:bold">Đơn hàng</a>
                         </li>
                         <li class="nav-item">
                     <a class="nav-link" href="{{ route('profiles.index') }}">Xin chào, {{Auth::user()->username}}</a>
@@ -27,16 +27,16 @@
                         <li class="nav-item active">
                             <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                                <button type="submit" class="nav-link btn-logout" style="font-family: 'Roboto', sans-serif;" >Đăng xuất</button>
+                                <button type="submit" class="nav-link btn-logout" style="font-family: 'Roboto', sans-serif;font-weigh:bold" >Đăng xuất</button>
                             </form>
                         </li>
                         @endif
                         @if (!Auth::user())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}" style="font-family: 'Roboto', sans-serif;">Đăng nhập</a>
+                            <a class="nav-link" href="{{ route('login') }}" style="font-family: 'Roboto', sans-serif;font-weigh:bold">Đăng nhập</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}" style="font-family: 'Roboto', sans-serif;">Đăng kí</a>
+                            <a class="nav-link" href="{{ route('register') }}" style="font-family: 'Roboto', sans-serif;font-weigh:bold">Đăng ký</a>
                         </li>
                         @endif
                     </ul>
